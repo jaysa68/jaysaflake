@@ -7,11 +7,14 @@
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
 
 ## aiko (thinkpad W540)
-[] screenshots
-[] configure firefox
-[] luks encryption
 
-## Secrets to someday be managed?
+[ ] screenshots
+
+[ ] configure firefox
+
+[ ] luks encryption
+
+### Secrets to someday be managed?
 - irc passwords (sasl plain)
 
 ### pipe dreams
