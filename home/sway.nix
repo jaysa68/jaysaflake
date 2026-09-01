@@ -45,6 +45,9 @@ in
 	  "${mod}+c" = "kill"; #i like closing stuff with 1 hand
 	  "${mod}+d" = "exec fuzzel";
 
+          "Print" = "exec grimshot save output ~/Pictures/screenshots/$(date+%Y-%m-%d_%H-%M-%S).png"; # full screen screenshot
+	  "${mod}+Shift+s" = "exec grimshot copy area";
+
 	  "${mod}+h" = "focus left";
 	  "${mod}+j" = "focus down";
 	  "${mod}+k" = "focus up";

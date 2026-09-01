@@ -97,6 +97,7 @@ in
   home.packages = with pkgs; [
     firefox
     claude-code
+    gimp
 
     zip
     xz
@@ -110,10 +111,15 @@ in
 
     which
     fastfetch
-
     htop
     btop
+    
     pavucontrol
+    grim
+    sway-contrib.grimshot
+    slurp
+    wl-clipboard
+
   ];
 
   programs = {

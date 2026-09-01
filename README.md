@@ -1,13 +1,15 @@
 # jaysaflake
 
+![screenshot of setup](./screenshot.png)
+
 ## Setup
 - when adding a new host, add the ssh key to github if development will happen on it!
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
 
 ## aiko (thinkpad W540)
-- configure git, upload this to github
-- configure firefox
-- luks encryption
+[] screenshots
+[] configure firefox
+[] luks encryption
 
 ## Secrets to someday be managed?
 - irc passwords (sasl plain)
@@ -33,3 +35,7 @@
     - plus The Future and whatnot
 - turn off wifi. wired only everything for improved digital hygiene
     - lain corner by the ethernet jack
+
+## completed tasks
+
+[x] configure git, upload this to github
