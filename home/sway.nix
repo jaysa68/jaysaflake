@@ -10,7 +10,10 @@ in
     input."type:touchpad" = {
       tap = "enabled";
     };
-    output."*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";
+    output = {
+      "*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";
+      "BOE 0x0BCA Unknown".scale = "1.5"; # scaling on venus (framework 13 display)
+    }; 
     modifier = "Mod4";
     window = {
       titlebar = false;
@@ -43,6 +46,7 @@ in
       {
 	  "${mod}+q" = "exec foot"; #i like opening terminals with 1 hand
 	  "${mod}+g" = "exec firefox"; #saves me 1 keypress for fuzzel + f lol. just muscle memory now
+	  "${mod}+u" = "exec signal"; #saves me 1 keypress for fuzzel + s
 	  "${mod}+c" = "kill"; #i like closing stuff with 1 hand
 	  "${mod}+d" = "exec fuzzel";
 
@@ -80,7 +84,7 @@ in
           "${mod}+7" = "workspace number 7";
           "${mod}+8" = "workspace number 8";
           "${mod}+9" = "workspace number 9";
-          "${mod}+0" = "workspace number 0";
+          "${mod}+0" = "workspace number 10";
 
           "${mod}+Shift+1" = "move container to workspace number 1";
           "${mod}+Shift+2" = "move container to workspace number 2";
@@ -91,7 +95,7 @@ in
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
           "${mod}+Shift+9" = "move container to workspace number 9";
-          "${mod}+Shift+0" = "move container to workspace number 0";
+          "${mod}+Shift+0" = "move container to workspace number 10";
 
 	  "${mod}+Shift+minus" = "move scratchpad";
 	  "${mod}+minus" = "scratchpad show";

@@ -18,6 +18,13 @@ in
     '';
   };
 
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  gtk = {
+    enable = true;
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+  };
+
   programs.halloy = {
     package = pkgs.symlinkJoin {
       name = "aiko-halloy";
@@ -122,6 +129,11 @@ in
     signal-desktop
     signal-cli
 
+    # for arini
+    zoom-us
+    devenv
+    direnv
+
   ];
 
   programs = {
@@ -132,6 +144,7 @@ in
 	user.email = "git@jaysa.net";
 	init.defaultBranch = "master";
 	pull.rebase = true;
+	push.autoSetupRemote = true;
       };
     };
     fuzzel = {
