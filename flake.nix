@@ -7,16 +7,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/NUR";
     nixvim = {
       url = "github:nix-community/nixvim";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { nixpkgs, home-manager, nur, nixvim, ... }: {
     nixosConfigurations.aiko = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/aiko
+	{ nixpkgs.overlays = [ nur.overlays.default ]; }
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;

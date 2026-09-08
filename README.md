@@ -14,6 +14,8 @@
 
 [ ] luks encryption
 
+[ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
+
 ### Secrets to someday be managed?
 - irc passwords (sasl plain)
 

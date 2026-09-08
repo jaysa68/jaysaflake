@@ -42,6 +42,7 @@ in
       in
       {
 	  "${mod}+q" = "exec foot"; #i like opening terminals with 1 hand
+	  "${mod}+g" = "exec firefox"; #saves me 1 keypress for fuzzel + f lol. just muscle memory now
 	  "${mod}+c" = "kill"; #i like closing stuff with 1 hand
 	  "${mod}+d" = "exec fuzzel";
 

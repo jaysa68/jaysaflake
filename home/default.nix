@@ -4,7 +4,7 @@ let
   theme = import ./theme.nix;
 in
 {
-  imports = [ ./sway.nix ./waybar.nix ./neovim.nix ];
+  imports = [ ./sway.nix ./waybar.nix ./neovim.nix ./firefox.nix];
 
   home = {
     username = "jaysa";
@@ -95,7 +95,6 @@ in
   };
 
   home.packages = with pkgs; [
-    firefox
     claude-code
     gimp
 
@@ -119,6 +118,9 @@ in
     sway-contrib.grimshot
     slurp
     wl-clipboard
+
+    signal-desktop
+    signal-cli
 
   ];
 
