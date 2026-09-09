@@ -1,7 +1,10 @@
-{ pkgs, ...} :
+{ pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.networkmanager.enable = true;
   programs.zsh.enable = true;
@@ -26,8 +29,11 @@
   users.users."jaysa" = {
     isNormalUser = true;
     description = "Jaysa Garcia";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 
@@ -35,5 +41,3 @@
   system.stateVersion = "26.05";
 
 }
-
-

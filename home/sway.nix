@@ -4,64 +4,64 @@ let
 in
 {
   wayland.windowManager.sway = {
-  enable = true;
-  config = {
-    #input."type:keyboard".xkb_options = "altwin:swap_alt_win"; #thinkpad W540 keyboard quirk... but then i didnt need it? weird
-    input."type:touchpad" = {
-      tap = "enabled";
-    };
-    output = {
-      "*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";
-      "BOE 0x0BCA Unknown".scale = "1.5"; # scaling on venus (framework 13 display)
-    }; 
-    modifier = "Mod4";
-    window = {
-      titlebar = false;
-    };
-    gaps = {
-      inner = 8;
-      outer = 0;
-    };
-    bars = [ ]; #to disable swaybar cuz i use waybar
-    colors = {
-      focused = {
-        border = theme.colors.hash.fg;
-	background = theme.colors.hash.bg;
-	text = theme.colors.hash.fg;
-	indicator = theme.colors.hash.green;
-        childBorder = theme.colors.hash.accent;
+    enable = true;
+    config = {
+      #input."type:keyboard".xkb_options = "altwin:swap_alt_win"; #thinkpad W540 keyboard quirk... but then i didnt need it? weird
+      input."type:touchpad" = {
+        tap = "enabled";
       };
-      unfocused = {
-        border = theme.colors.hash.muted;
-        childBorder = theme.colors.hash.muted;
-	background = theme.colors.hash.bg;
-	text = theme.colors.hash.fg;
-	indicator = theme.colors.hash.green;
+      output = {
+        "*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";
+        "BOE 0x0BCA Unknown".scale = "1.5"; # scaling on venus (framework 13 display)
       };
-    };
-    keybindings =
-      let
-        mod = config.wayland.windowManager.sway.config.modifier;
-      in
-      {
-	  "${mod}+q" = "exec foot"; #i like opening terminals with 1 hand
-	  "${mod}+g" = "exec firefox"; #saves me 1 keypress for fuzzel + f lol. just muscle memory now
-	  "${mod}+u" = "exec signal"; #saves me 1 keypress for fuzzel + s
-	  "${mod}+c" = "kill"; #i like closing stuff with 1 hand
-	  "${mod}+d" = "exec fuzzel";
+      modifier = "Mod4";
+      window = {
+        titlebar = false;
+      };
+      gaps = {
+        inner = 8;
+        outer = 0;
+      };
+      bars = [ ]; # to disable swaybar cuz i use waybar
+      colors = {
+        focused = {
+          border = theme.colors.hash.fg;
+          background = theme.colors.hash.bg;
+          text = theme.colors.hash.fg;
+          indicator = theme.colors.hash.green;
+          childBorder = theme.colors.hash.accent;
+        };
+        unfocused = {
+          border = theme.colors.hash.muted;
+          childBorder = theme.colors.hash.muted;
+          background = theme.colors.hash.bg;
+          text = theme.colors.hash.fg;
+          indicator = theme.colors.hash.green;
+        };
+      };
+      keybindings =
+        let
+          mod = config.wayland.windowManager.sway.config.modifier;
+        in
+        {
+          "${mod}+q" = "exec foot"; # i like opening terminals with 1 hand
+          "${mod}+g" = "exec firefox"; # saves me 1 keypress for fuzzel + f lol. just muscle memory now
+          "${mod}+u" = "exec signal"; # saves me 1 keypress for fuzzel + s
+          "${mod}+c" = "kill"; # i like closing stuff with 1 hand
+          "${mod}+d" = "exec fuzzel";
 
           "Print" = "exec grimshot save output ~/Pictures/screenshots/$(date+%Y-%m-%d_%H-%M-%S).png"; # full screen screenshot
-	  "${mod}+Shift+s" = "exec grimshot copy area";
+          "${mod}+Shift+s" = "exec grimshot copy area";
 
-	  "${mod}+h" = "focus left";
-	  "${mod}+j" = "focus down";
-	  "${mod}+k" = "focus up";
-	  "${mod}+l" = "focus right";
+          "${mod}+h" = "focus left";
+          "${mod}+j" = "focus down";
+          "${mod}+k" = "focus up";
+          "${mod}+l" = "focus right";
 
-	  "${mod}+Shift+h" = "move left";
-	  "${mod}+Shift+j" = "move down";
-	  "${mod}+Shift+k" = "move up";
-	  "${mod}+Shift+l" = "move right";
+          "${mod}+Shift+h" = "move left";
+          "${mod}+Shift+j" = "move down";
+          "${mod}+Shift+k" = "move up";
+          "${mod}+Shift+l" = "move right";
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
@@ -97,13 +97,13 @@ in
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
 
-	  "${mod}+Shift+minus" = "move scratchpad";
-	  "${mod}+minus" = "scratchpad show";
+          "${mod}+Shift+minus" = "move scratchpad";
+          "${mod}+minus" = "scratchpad show";
 
-	  "${mod}+Shift+c" = "reload";
-	  "${mod}+Shift+e" = "swaymsg exit";
-	  "${mod}+r" = "mode resize";
-      };
+          "${mod}+Shift+c" = "reload";
+          "${mod}+Shift+e" = "swaymsg exit";
+          "${mod}+r" = "mode resize";
+        };
     };
   };
 }

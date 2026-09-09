@@ -1,12 +1,11 @@
 { ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/graphical.nix
-      ../../base.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/graphical.nix
+    ../../base.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;

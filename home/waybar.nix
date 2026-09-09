@@ -1,4 +1,4 @@
-{ lib, ...}:
+{ lib, ... }:
 {
   programs.waybar = {
     enable = true;
@@ -17,13 +17,20 @@
         orientation = "horizontal";
         modules = [ "clock" ];
       };
-      modules-left =  [ "group/workspaces-box" ];
+      modules-left = [ "group/workspaces-box" ];
       modules-center = [ "group/clock-box" ];
-      modules-right = [ "cpu" "memory" "pulseaudio" "network" "battery" "tray" ];
+      modules-right = [
+        "cpu"
+        "memory"
+        "pulseaudio"
+        "network"
+        "battery"
+        "tray"
+      ];
       clock = {
         format = "{:%a, %b %d - %I:%M %p}";
         format-alt = "{:%a, %b %d - %I:%M:%S %p}";
-	interval = 60;
+        interval = 60;
         tooltip-format = "<tt>{calendar}</tt>";
       };
       cpu = {
@@ -58,9 +65,9 @@
         tooltip-format = "{desc}";
       };
       battery = {
-        format = "bat {capacity}%"; 
-        format-charging = "chr {capacity}%"; 
-        format-plugged = "chr {capacity}%"; 
+        format = "bat {capacity}%";
+        format-charging = "chr {capacity}%";
+        format-plugged = "chr {capacity}%";
         interval = 30;
         states = {
           warning = 25;
@@ -71,41 +78,42 @@
     style =
       let
         theme = import ./theme.nix;
-	palette = lib.concatStringsSep "\n"
-	  (lib.mapAttrsToList (name: value: "@define-color ${name} ${value};") theme.colors.hash);
+        palette = lib.concatStringsSep "\n" (
+          lib.mapAttrsToList (name: value: "@define-color ${name} ${value};") theme.colors.hash
+        );
       in
       ''
-        ${palette}
+                ${palette}
 
-        * {
-          font-family: ${theme.fonts.mono};
-          font-size: 14px;
-          font-weight: bold;
-        }
-	.modules-right {
-	  padding-right: 6px;
-	}
-	window#waybar {
-	  background: ${theme.colors.hash.bg};
-	  border: 2px solid ${theme.colors.hash.brightBlack};
-	}
-        #workspaces-box, #clock-box, #pulseaudio, #network, #cpu, #memory, #battery, #tray {
-          background: ${theme.colors.hash.black};
-          border: 1px solid ${theme.colors.hash.brightBlack};
-          margin: 6px 0 6px 6px;
-	  color: @fg;
-          padding: 0 5px;
-        }
-	#workspaces button {
-	  color: ${theme.colors.hash.white};
-          padding: 0 5px;
-          margin: 0;
-          border-radius: 0;
-          background: transparent;
-	}
-	#workspaces button.focused {
-	  color: ${theme.colors.hash.fg};
-	}
+                * {
+                  font-family: ${theme.fonts.mono};
+                  font-size: 14px;
+                  font-weight: bold;
+                }
+        	.modules-right {
+        	  padding-right: 6px;
+        	}
+        	window#waybar {
+        	  background: ${theme.colors.hash.bg};
+        	  border: 2px solid ${theme.colors.hash.brightBlack};
+        	}
+                #workspaces-box, #clock-box, #pulseaudio, #network, #cpu, #memory, #battery, #tray {
+                  background: ${theme.colors.hash.black};
+                  border: 1px solid ${theme.colors.hash.brightBlack};
+                  margin: 6px 0 6px 6px;
+        	  color: @fg;
+                  padding: 0 5px;
+                }
+        	#workspaces button {
+        	  color: ${theme.colors.hash.white};
+                  padding: 0 5px;
+                  margin: 0;
+                  border-radius: 0;
+                  background: transparent;
+        	}
+        	#workspaces button.focused {
+        	  color: ${theme.colors.hash.fg};
+        	}
       '';
   };
 }
