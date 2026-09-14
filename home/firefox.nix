@@ -84,6 +84,16 @@
             keyword = "pscale";
             url = "https://app.planetscale.com/arini";
           }
+          {
+            name = "claude";
+            keyword = "cl";
+            url = "https://claude.ai/";
+          }
+          {
+            name = "Google Drive";
+            keyword = "gd";
+            url = "https://workspace.google.com/";
+          }
         ];
       };
       search = {
@@ -191,6 +201,10 @@
               neverAsk = true;
             };
             "siteContainerMap@@_app.notion.com" = {
+              userContextId = "2";
+              neverAsk = true;
+            };
+            "siteContainerMap@@_claude.ai" = {
               userContextId = "2";
               neverAsk = true;
             };

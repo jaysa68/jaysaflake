@@ -126,6 +126,7 @@ in
     vim
     htop
     btop
+    handy
 
     ripgrep
     jq

@@ -12,8 +12,24 @@ in
       };
       output = {
         "*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";
-        "BOE 0x0BCA Unknown".scale = "1.5"; # scaling on venus (framework 13 display)
+        # arini monitor order
+        "LG Electronics LG ULTRAGEAR 0x00000505".position = "0 0";
+        "LG Electronics LG ULTRAGEAR 601BNNW2T639".position = "2560 0";
+        "BOE 0x0BCA Unknown" = {
+          scale = "1.5"; # scaling on venus (framework 13 display)
+          position = "5210 0";
+        };
       };
+      workspaceOutputAssign = [
+        {
+          workspace = "1";
+          output = "LG Electronics LG ULTRAGEAR 0x00000505";
+        }
+        {
+          workspace = "2";
+          output = "LG Electronics LG ULTRAGEAR 601BNNW2T639";
+        }
+      ];
       modifier = "Mod4";
       window = {
         titlebar = false;
@@ -49,6 +65,16 @@ in
           "${mod}+u" = "exec signal"; # saves me 1 keypress for fuzzel + s
           "${mod}+c" = "kill"; # i like closing stuff with 1 hand
           "${mod}+d" = "exec fuzzel";
+
+          "Control+space" = "exec pkill -USR2 -x handy";
+
+          # framework 13 media keys
+          "--locked XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "--locked XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          "--locked XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+";
+          "--locked XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "--locked XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+          "--locked XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
 
           "Print" = "exec grimshot save output ~/Pictures/screenshots/$(date+%Y-%m-%d_%H-%M-%S).png"; # full screen screenshot
           "${mod}+Shift+s" = "exec grimshot copy area";
