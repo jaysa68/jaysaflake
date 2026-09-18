@@ -4,10 +4,20 @@
     enable = true;
     defaultEditor = true;
     globals.mapleader = " ";
-
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<cr>";
+        options.desc = "File tree";
+      }
+    ];
     plugins = {
       treesitter.enable = true;
       lualine.enable = true;
+      neo-tree = {
+        enable = true;
+      };
       gitsigns = {
         enable = true;
         settings = {

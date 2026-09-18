@@ -30,6 +30,7 @@ in
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
+  programs.chromium.enable = true;
   programs.halloy = {
     package = pkgs.symlinkJoin {
       name = "aiko-halloy";
@@ -131,6 +132,7 @@ in
     ripgrep
     jq
     which
+    cheese
 
     fastfetch
 
@@ -147,6 +149,10 @@ in
   ];
 
   programs = {
+    lazygit = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     git = {
       enable = true;
       settings = {

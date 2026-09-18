@@ -39,6 +39,9 @@ in
         outer = 0;
       };
       bars = [ ]; # to disable swaybar cuz i use waybar
+      startup = [
+        { command = "handy"; }
+      ];
       colors = {
         focused = {
           border = theme.colors.hash.fg;
@@ -66,7 +69,7 @@ in
           "${mod}+c" = "kill"; # i like closing stuff with 1 hand
           "${mod}+d" = "exec fuzzel";
 
-          "Control+space" = "exec pkill -USR2 -x handy";
+          "Control+space" = "exec pkill -USR2 -xf handy";
 
           # framework 13 media keys
           "--locked XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";

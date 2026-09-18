@@ -1,6 +1,17 @@
 { pkgs, ... }:
 {
   # see https://wiki.nixos.org/wiki/Firefox
+
+  xdg.mimeApps = {
+    enable = true;
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+    "x-scheme-handler/about" = "firefox.desktop";
+    "x-scheme-handler/unknown" = "firefox.desktop";
+    "application/xhtml+xml" = "firefox.desktop";
+  };
+
   programs.firefox = {
     enable = true;
 
@@ -93,6 +104,16 @@
             name = "Google Drive";
             keyword = "gd";
             url = "https://workspace.google.com/";
+          }
+          {
+            name = "Zoho Mail";
+            keyword = "zm";
+            url = "https://mail.zoho.com/zm/#mail/folder/inbox";
+          }
+          {
+            name = "Gmail";
+            keyword = "gm";
+            url = "https://mail.google.com/mail/u/0/#inbox";
           }
         ];
       };

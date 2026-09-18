@@ -27,11 +27,13 @@
     - *ok, after configuring waybar, css makes sense i guess... whole nother language like yuck does NOT though that shit has to be overkill*
 
 ## homelab 2: Be Natural
-- jaysa.net
-- blog.jaysa.net
-- uptime monitor
-- rss server returns
-- minecraft server returns
+- manage momo with jaysaflake
+    - uptime monitor (on friend's homelab?)
+    - jaysa.net
+    - blog.jaysa.net
+    - minecraft server returns
+    - rss server returns
+- decommission nikki
 - add venus to jaysaflake
 
 ### pipe dreams
