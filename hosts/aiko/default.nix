@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/graphical.nix
-    ../../base.nix
+    ../../modules/base.nix
   ];
 
   # Use the GRUB 2 boot loader.
