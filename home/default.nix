@@ -30,7 +30,10 @@ in
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
-  programs.chromium.enable = true;
+  programs.chromium.enable = true; # for playwright
+  programs.ncmpcpp = {
+    enable = true;
+  };
   programs.halloy = {
     package = pkgs.symlinkJoin {
       name = "aiko-halloy";
