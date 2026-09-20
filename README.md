@@ -6,14 +6,9 @@
 - when adding a new host, add the ssh key to github if development will happen on it!
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
 
-## aiko (thinkpad W540)
-
-[ ] screenshots
-
-[ ] configure firefox
-
-[ ] luks encryption
-
+## home manager
+[x] screenshots
+[x] configure firefox
 [ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
 
 ### Secrets to someday be managed?

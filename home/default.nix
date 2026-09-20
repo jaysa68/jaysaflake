@@ -148,6 +148,7 @@ in
     zoom-us
     devenv
     direnv
+    nodejs
 
   ];
 

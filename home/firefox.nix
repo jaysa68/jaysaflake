@@ -28,6 +28,9 @@
           userSettings = {
             uiTheme = "dark";
           };
+          userFilters = ''
+            google.com##.hdzaWe #blocks google ai overview in search results
+          '';
         };
       };
     };
