@@ -108,6 +108,11 @@
             keyword = "gm";
             url = "https://mail.google.com/mail/u/0/#inbox";
           }
+          {
+            name = "Google Maps";
+            keyword = "maps";
+            url = "https://www.google.com/maps";
+          }
         ];
       };
       search = {

@@ -42,7 +42,7 @@ in
       postBuild = ''
         wrapProgram $out/bin/halloy --set WGPU_BACKEND gl
       '';
-    }; #something something old hardware gpu compatibility
+    }; # something something old hardware gpu compatibility
     enable = true;
     settings = {
       font = {

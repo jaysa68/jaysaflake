@@ -68,7 +68,7 @@ in
           "${mod}+u" = "exec signal-desktop"; # saves me 1 keypress for fuzzel + s
           "${mod}+c" = "kill"; # i like closing stuff with 1 hand
           "${mod}+d" = "exec fuzzel";
-          "${mod}+h" = "exec halloy";
+          "${mod}+z" = "exec halloy";
 
           "Control+space" = "exec pkill -USR2 -xf handy";
 
