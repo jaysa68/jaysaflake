@@ -22,6 +22,7 @@
     - *ok, after configuring waybar, css makes sense i guess... whole nother language like yuck does NOT though that shit has to be overkill*
 
 ## homelab 2: Be Natural
+[ ] expand emoticons page to also have emotes; add search
 [ ] self-hosted pastebin for uploading imgs to irc
 [ ] tui spotify listen-along client
     - requires spotify token from my acct
