@@ -46,10 +46,10 @@ in
     enable = true;
     settings = {
       preview = {
-          image = {
-	    action = "preview";
-	  };
+        image = {
+          action = "preview";
         };
+      };
       font = {
         family = theme.fonts.mono;
         size = 14;
@@ -60,9 +60,9 @@ in
           nickname = "jaysa";
           server = "irc.libera.chat";
           channels = [
-	    "#nixos"
-	    "#halloy"
-	  ];
+            "#nixos"
+            "#halloy"
+          ];
           sasl.plain = {
             username = "jaysa";
             password_file = "/home/jaysa/.secrets/liberachat";

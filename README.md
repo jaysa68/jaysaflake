@@ -10,6 +10,10 @@
 [x] screenshots
 [x] configure firefox
 [ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
+[ ] tui spotify listen-along client
+    - requires spotify token from my acct
+    - maybe make a repo for this proj (until they inevitably take it down)
+    - i had this before but lost in the rebirth of venus
 
 ### Secrets to someday be managed?
 - irc passwords (sasl plain)
