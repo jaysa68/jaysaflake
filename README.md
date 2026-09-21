@@ -10,10 +10,6 @@
 [x] screenshots
 [x] configure firefox
 [ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
-[ ] tui spotify listen-along client
-    - requires spotify token from my acct
-    - maybe make a repo for this proj (until they inevitably take it down)
-    - i had this before but lost in the rebirth of venus
 
 ### Secrets to someday be managed?
 - irc passwords (sasl plain)
@@ -26,14 +22,19 @@
     - *ok, after configuring waybar, css makes sense i guess... whole nother language like yuck does NOT though that shit has to be overkill*
 
 ## homelab 2: Be Natural
+[ ] self-hosted pastebin for uploading imgs to irc
+[ ] tui spotify listen-along client
+    - requires spotify token from my acct
+    - maybe make a repo for this proj (until they inevitably take it down)
+    - i had this before but lost in the rebirth of venus
+
 - manage momo with jaysaflake
-    - uptime monitor (on friend's homelab?)
-    - jaysa.net
-    - blog.jaysa.net
-    - minecraft server returns
-    - rss server returns
+    - [ ] uptime monitor (on friend's homelab?)
+    - [ ] jaysa.net
+    - [ ] blog.jaysa.net
+    - [ ] minecraft server returns
+    - [ ] rss server returns
 - decommission nikki
-- add venus to jaysaflake
 
 ### pipe dreams
 - **ipv6** cuz monkeybrains in my apartment put my ass on cgnat
@@ -45,3 +46,4 @@
 ## completed tasks
 
 [x] configure git, upload this to github
+[x] add venus to jaysaflake
