@@ -45,6 +45,11 @@ in
     }; # something something old hardware gpu compatibility
     enable = true;
     settings = {
+      preview = {
+          image = {
+	    action = "preview";
+	  };
+        };
       font = {
         family = theme.fonts.mono;
         size = 14;
@@ -54,7 +59,10 @@ in
         liberachat = {
           nickname = "jaysa";
           server = "irc.libera.chat";
-          channels = [ "#nixos" ];
+          channels = [
+	    "#nixos"
+	    "#halloy"
+	  ];
           sasl.plain = {
             username = "jaysa";
             password_file = "/home/jaysa/.secrets/liberachat";
