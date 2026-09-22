@@ -11,6 +11,9 @@
 [x] configure firefox
 [ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
 
+### neovim
+[ ] sql/postgres queries in a file of another language should still have sql syntax highlighting? yeah, should be smthn out there for this
+
 ### Secrets to someday be managed?
 - irc passwords (sasl plain)
 
