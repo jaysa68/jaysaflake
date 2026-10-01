@@ -8,9 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -19,37 +18,31 @@
       home-manager,
       nur,
       nixvim,
+      claude-code,
       ...
     }:
+    let
+      system = "x86_64-linux";
+
+      mkHost =
+        host:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/${host}
+            { nixpkgs.overlays = [ nur.overlays.default claude-code.overlays.default ]; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
+              home-manager.users.jaysa.imports = [ ./home ];
+            }
+          ];
+        };
+    in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
-      nixosConfigurations.aiko = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/aiko
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
-            home-manager.users.jaysa.imports = [ ./home ];
-          }
-        ];
-      };
-      nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/venus
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
-            home-manager.users.jaysa.imports = [ ./home ];
-          }
-        ];
-      };
+    formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
+    nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" ] mkHost;
     };
 }

@@ -113,6 +113,11 @@
             keyword = "maps";
             url = "https://www.google.com/maps";
           }
+          {
+            name = "goblin";
+            keyword = "goblin";
+            url = "https://linear.app/arini/project/goblin-851d7a4f0829/issues?filter=eyJhbmQiOlt7InN0YXRlIjp7Im5hbWUiOnsibmluIjpbIkNhbmNlbGVkIiwiRHVwbGljYXRlIiwiRG9uZSJdfX19XX0";
+          }
         ];
       };
       search = {
