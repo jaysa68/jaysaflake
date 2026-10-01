@@ -30,7 +30,12 @@
           inherit system;
           modules = [
             ./hosts/${host}
-            { nixpkgs.overlays = [ nur.overlays.default claude-code.overlays.default ]; }
+            {
+              nixpkgs.overlays = [
+                nur.overlays.default
+                claude-code.overlays.default
+              ];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -42,7 +47,7 @@
         };
     in
     {
-    formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
-    nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" ] mkHost;
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
+      nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" ] mkHost;
     };
 }

@@ -232,6 +232,10 @@
               userContextId = "2";
               neverAsk = true;
             };
+            "siteContainerMap@@_linear.app" = {
+              userContextId = "2";
+              neverAsk = true;
+            };
           };
         };
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
