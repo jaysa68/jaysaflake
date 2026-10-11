@@ -23,6 +23,7 @@
         "cpu"
         "memory"
         "pulseaudio"
+        "pulseaudio#mic"
         "network"
         "battery"
         "tray"
@@ -35,7 +36,7 @@
       };
       cpu = {
         interval = 5;
-        format = "cpu {usage}%";
+        format = " {usage}%";
         states = {
           warning = 80;
           critical = 90;
@@ -43,7 +44,7 @@
       };
       memory = {
         interval = 5;
-        format = "mem {percentage}%";
+        format = " {percentage}%";
         states = {
           warning = 80;
           critical = 90;
@@ -51,23 +52,31 @@
       };
       network = {
         interval = 2;
-        format-wifi = "wifi {signalStrength}";
-        format-ethernet = "eth {signalStrength}";
-        format-disconnected = "no net";
+        format-wifi = "󰖩 {signalStrength}";
+        format-ethernet = "󰈀 {signalStrength}";
+        format-disconnected = "󰖪 {signalStrength}";
         tooltip-format-wifi = "{essid} ({bandwidthTotalBytes}) {ipaddr}";
       };
       pulseaudio = {
-        format = "vol {volume}%";
-        format-muted = "vol mute";
+        format = "  {format_source}";
+        format-muted = "   0%";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         on-click-right = "pavucontrol";
         scroll-step = 2;
         tooltip-format = "{desc}";
       };
+      "pulseaudio#mic" = {
+        format = "{format_source}";
+        format-muted = "{format_source}";
+        format-source = " {volume}%";
+        format-source-muted = "󰍭  0%";
+        on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+        tooltip-format = "{source_desc}";
+      };
       battery = {
-        format = "bat {capacity}%";
-        format-charging = "chr {capacity}%";
-        format-plugged = "chr {capacity}%";
+        format = "󰁹 {capacity}%";
+        format-charging = "󰢝 {capacity}%";
+        format-plugged = "󰂅 {capacity}%";
         interval = 30;
         states = {
           warning = 25;

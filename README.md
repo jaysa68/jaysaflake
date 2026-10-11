@@ -9,7 +9,7 @@
 ## home manager
 [x] screenshots
 [x] configure firefox
-[ ] my own version of melange firefox theme that's darker, more like gruvbox (lack of contrast in tab names pmo with this one)
+[ ] add microphone toggle and status in status bar, next to mute
 
 ### neovim
 [ ] sql/postgres queries in a file of another language should still have sql syntax highlighting? yeah, should be smthn out there for this
@@ -38,6 +38,9 @@
     - [ ] blog.jaysa.net
     - [ ] minecraft server returns
     - [ ] rss server returns
+        - WBE
+        - aella
+        - ppl from college
 - decommission nikki
 
 ### pipe dreams

@@ -9,6 +9,8 @@ in
       #input."type:keyboard".xkb_options = "altwin:swap_alt_win"; #thinkpad W540 keyboard quirk... but then i didnt need it? weird
       input."type:touchpad" = {
         tap = "enabled";
+        dwt = "disabled"; # lets you use touchpad while typing, for video games mostly
+        click_method = "button_areas";
       };
       output = {
         "*".bg = "${./wallpapers/slime-rancher-2-chaos.png} fill";

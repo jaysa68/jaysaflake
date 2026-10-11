@@ -30,6 +30,16 @@
           };
           userFilters = ''
             google.com##.hdzaWe
+            youtube.com##ytd-reel-shelf-renderer
+            youtube.com##ytd-rich-shelf-renderer[is-shorts]
+            youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model)
+            youtube.com##ytd-rich-item-renderer:has(a[href^="/shorts/"])
+            youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+            youtube.com##ytd-grid-video-renderer:has(a[href^="/shorts/"])
+            youtube.com##ytd-guide-entry-renderer:has(a[title="Shorts"])
+            youtube.com##ytd-mini-guide-entry-renderer:has(a[title="Shorts"])
+            youtube.com##yt-tab-shape[tab-title="Shorts"]
+            ||youtube.com/shorts/$document
           ''; # blocks google ai overview in search results
         };
       };

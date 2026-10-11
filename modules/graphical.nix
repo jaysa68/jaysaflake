@@ -8,6 +8,16 @@
     enable = true;
     nssmdns4 = true;
   };
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "EPSON_XP4100";
+        deviceUri = "ipp://EPSON3217EE.local/ipp/print";
+        model = "everywhere";
+      }
+    ];
+    ensureDefaultPrinter = "EPSON_XP4100";
+  };
 
   # The portal service runs with a stripped-down PATH, so the default monitor
   # choosers (wofi/rofi/slurp from the user profile) are never found and every

@@ -84,10 +84,6 @@ in
       buffer.channel.topic.enabled = true;
     };
   };
-  #xdg.configFile."halloy/themes/melange.toml.text = ''
-  #  [general]
-  #  background = "#{themes.colors.raw.bg}"
-  #'';
 
   programs.foot = {
     enable = true;
@@ -157,6 +153,7 @@ in
     devenv
     direnv
     nodejs
+    google-chrome # microsoft teams is a bitch on firefox, but needed for customers
 
   ];
 

@@ -8,6 +8,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.networkmanager.enable = true;
   programs.zsh.enable = true;
+  programs.steam.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
