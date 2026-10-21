@@ -9,6 +9,7 @@
   networking.networkmanager.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
+  services.tailscale.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -36,6 +37,11 @@
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
+  };
+
+  #otherwise cant log in on a test VM by default!
+  virtualisation.vmVariant = {
+    users.users.jaysa.initialPassword = "test";
   };
 
   nixpkgs.config.allowUnfree = true;

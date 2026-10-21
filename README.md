@@ -6,10 +6,41 @@
 - when adding a new host, add the ssh key to github if development will happen on it!
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
 
+To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/run-venus-vm```
+
+## homelab 2: Be Natural
+
+## TODO
+
+## jaysa.net
+[ ] easily listen to billboard top 100 / spotify top 50
+[ ] expand emoticons page to also have emotes; add search
+[ ] self-hosted pastebin for uploading imgs to irc
+- [ ] manage momo with jaysaflake
+    - [ ] uptime monitor (on friend's homelab?)
+    - [ ] jaysa.net
+    - [ ] blog.jaysa.net
+    - [ ] minecraft server returns
+    - [ ] rss server returns
+        - WBE
+        - aella
+        - ppl from college
+
 ## home manager
 [x] screenshots
 [x] configure firefox
 [ ] add microphone toggle and status in status bar, next to mute
+
+## misc
+[ ] easy way to add songs to ipod shuffle
+[ ] backup yubikey setup
+[ ] tui spotify listen-along client
+    - requires spotify token from my acct
+    - maybe make a repo for this proj (until they inevitably take it down)
+    - ncmpcpp plugin?
+    - i had this before but lost in the rebirth of venus
+
+- decommission nikki
 
 ### neovim
 [ ] sql/postgres queries in a file of another language should still have sql syntax highlighting? yeah, should be smthn out there for this
@@ -23,25 +54,7 @@
     - *im surprised by the lack of home manager managable status bars lol*
     - *waybar needs a css file for styling, and eww is in another language entirely (yuck)... is there a good reason these things arent done in nix that im missing? TBD*
     - *ok, after configuring waybar, css makes sense i guess... whole nother language like yuck does NOT though that shit has to be overkill*
-
-## homelab 2: Be Natural
-[ ] expand emoticons page to also have emotes; add search
-[ ] self-hosted pastebin for uploading imgs to irc
-[ ] tui spotify listen-along client
-    - requires spotify token from my acct
-    - maybe make a repo for this proj (until they inevitably take it down)
-    - i had this before but lost in the rebirth of venus
-
-- manage momo with jaysaflake
-    - [ ] uptime monitor (on friend's homelab?)
-    - [ ] jaysa.net
-    - [ ] blog.jaysa.net
-    - [ ] minecraft server returns
-    - [ ] rss server returns
-        - WBE
-        - aella
-        - ppl from college
-- decommission nikki
+- backup ipod shuffle?
 
 ### pipe dreams
 - **ipv6** cuz monkeybrains in my apartment put my ass on cgnat

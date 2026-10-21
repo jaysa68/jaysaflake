@@ -69,6 +69,11 @@
             url = "https://app.slack.com/client";
           }
           {
+            name = "Microsoft Teams";
+            keyword = "teams";
+            url = "https://teams.cloud.microsoft";
+          }
+          {
             name = "Discord";
             keyword = "d";
             url = "https://discord.com/channels/";
