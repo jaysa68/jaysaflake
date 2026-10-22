@@ -71,7 +71,7 @@ in
           "${mod}+c" = "kill"; # i like closing stuff with 1 hand
           "${mod}+d" = "exec fuzzel";
           "${mod}+z" = "exec halloy";
-          "${mod}+F12" = "pkill -SIGRTMIN -x wvkbd-mobintl"; #steam deck: show/hide on-screen keyboard"
+          "${mod}+F12" = "exec pkill -SIGRTMIN -x wvkbd-mobintl"; #steam deck: show/hide on-screen keyboard"
 
           "Control+space" = "exec pkill -USR2 -xf handy";
 
