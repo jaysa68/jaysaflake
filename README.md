@@ -5,10 +5,13 @@
 ## Adding New Hosts
 
 1. `git clone https://github.com/jaysa68/jaysaflake.git ~/jaysaflake`
-2. 
+1. add new host config in hosts/
+1. `sudo NIX_CONFIG="experimental-features = nix-command flakes" nixos-rebuild boot --flake .#hostname`
 
 - add the ssh key to github if development will happen on it!
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
+
+## Testing
 
 To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/run-venus-vm```
 
