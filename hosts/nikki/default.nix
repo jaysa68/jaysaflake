@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+      ./hardware-configuration.nix
+    ../../modules/graphical.nix
     ../../modules/base.nix
   ];
 
