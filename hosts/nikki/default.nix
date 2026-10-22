@@ -29,29 +29,9 @@
     command = "sway";
   };
 
-  # sway steamdeck keybinds
-  services.evremap = {
-    enable = true;
-    settings = {
-      device_name = "Steam Deck";
-      remap = [
-        {
-          input = [ "BTN_TRIGGER_HAPPY1" ];
-          output = [
-            "KEY_LEFTMETA"
-            "KEY_C"
-          ];
-        }
-        {
-          input = [ "BTN_TRIGGER_HAPPY2" ];
-          output = [
-            "KEY_LEFTMETA"
-            "KEY_D"
-          ];
-        }
-      ];
-    };
-  };
+environment.systemPackages = with pkgs; [
+  sc-controller # map steam deck buttons
+];
 
   networking.hostName = "nikki";
 }
