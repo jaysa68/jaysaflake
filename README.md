@@ -14,6 +14,23 @@ To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/ru
 
 ## homelab 2: Be Natural
 
+- nikki: OCF staff vm
+    - TODO rename to tiffany (cuz university lol)
+- momo: hetzner VM
+- kyu: gaming PC turned to archlinux host
+- celeste: google cloud VM (TO BE DECOMMISSIONED)
+- tiffany: unifi express 7 router
+    - TODO rename to inna_de_poona
+
+### portable devices
+- venus: framework 13
+- audrey: thinkpad X220T
+- aiko: thinkpad W540
+- nikki: steam deck
+
+### arini
+- abia: nixOS VM running 24/7 on a macbook pro
+
 ## TODO
 
 ## jaysa.net
