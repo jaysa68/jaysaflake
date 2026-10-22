@@ -31,6 +31,7 @@
 
 environment.systemPackages = with pkgs; [
   sc-controller # map steam deck buttons
+  wvkbd # on-screen keeb
 ];
 
   networking.hostName = "nikki";
