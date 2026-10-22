@@ -2,8 +2,12 @@
 
 ![screenshot of setup](./screenshot.png)
 
-## Setup
-- when adding a new host, add the ssh key to github if development will happen on it!
+## Adding New Hosts
+
+1. `git clone https://github.com/jaysa68/jaysaflake.git ~/jaysaflake`
+2. 
+
+- add the ssh key to github if development will happen on it!
     - `gh ssh-key add ~/.ssh/id_ed25519.pub --title "${hostname}"`
 
 To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/run-venus-vm```
