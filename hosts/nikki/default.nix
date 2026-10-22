@@ -2,7 +2,7 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../modules/graphical.nix
     ../../modules/base.nix
   ];
@@ -17,14 +17,17 @@
     steam = {
       enable = true;
       user = "jaysa";
-      autoStart = true;
-      desktopSession = "plasma";
     };
     decky-loader = {
       enable = true;
     };
   };
   services.desktopManager.plasma6.enable = true;
+
+  services.greetd.settings.initial_session = {
+    user = "jaysa";
+    command = "sway";
+  };
 
   networking.hostName = "nikki";
 }
