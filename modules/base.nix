@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
   networking.networkmanager.enable = true;
   programs.zsh.enable = true;
   services.tailscale.enable = true;
