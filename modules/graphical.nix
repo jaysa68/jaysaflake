@@ -1,5 +1,7 @@
 { pkgs, ... }: {
 
+  home-manager.users.jaysa.imports = [ ../home/graphical.nix ];
+
   services.displayManager.regreet.enable = true;
   programs.sway.enable = true; # need to enable in system file for regreet to pick it up
   services.printing.enable = true;

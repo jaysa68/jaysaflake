@@ -27,7 +27,6 @@
       mkHost =
         host:
         nixpkgs.lib.nixosSystem {
-          inherit system;
           modules = [
             ./hosts/${host}
             {
@@ -48,6 +47,6 @@
     in
     {
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
-      nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" ] mkHost;
+      nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" "abia" ] mkHost;
     };
 }

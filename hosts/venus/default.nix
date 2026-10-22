@@ -13,5 +13,8 @@
   boot.initrd.luks.devices."luks-746d9d4f-120a-4883-a8c6-4a1c8aaf24e1".device =
     "/dev/disk/by-uuid/746d9d4f-120a-4883-a8c6-4a1c8aaf24e1";
 
+  #TODO move this into a graphical module... sort that out
+  programs.steam.enable = true;
+
   networking.hostName = "venus";
 }

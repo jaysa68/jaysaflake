@@ -260,18 +260,6 @@
           multi-account-containers
           easy-container-shortcuts # ctrl + shift + 1...9 for my container shortcuts. and others lol
           gruvbox-dark-theme
-          (buildFirefoxXpiAddon {
-            pname = "melange-theme";
-            version = "1.0";
-            addonId = "{dd525cca-875b-4072-97e6-a7758c3f8397}";
-            url = "https://addons.mozilla.org/en-US/firefox/downloads/file/4168532/melange_theme-1.0.xpi";
-            sha256 = "sha256-wh7/SkcPB1JeGkDUZd+DU+5fp3roKojC3teQXEN3S5w=";
-            meta = with pkgs.lib; {
-              homepage = "https://addons.mozilla.org/en-US/firefox/addon/melange-theme/";
-              license = licenses.cc-by-nc-sa-30;
-              platforms = platforms.all;
-            };
-          })
         ];
       };
       settings = {
