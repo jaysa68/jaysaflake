@@ -111,14 +111,14 @@ in
           "${mod}+space" = "focus mode_toggle";
 
           #these are mostly for steam deck
-	  "${mod}+Right" = "exec ${pkgs.writeShellScript "ws-right" ''
-  n=$(${pkgs.sway}/bin/swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq '.[] | select(.focused).num')
-  ${pkgs.sway}/bin/swaymsg workspace number $(( n >= 10 ? 1 : n + 1 ))
-''}";
-"${mod}+Left" = "exec ${pkgs.writeShellScript "ws-left" ''
-  n=$(${pkgs.sway}/bin/swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq '.[] | select(.focused).num')
-  ${pkgs.sway}/bin/swaymsg workspace number $(( n <= 1 ? 10 : n - 1 ))
-''}";
+          "${mod}+Right" = "exec ${pkgs.writeShellScript "ws-right" ''
+            n=$(${pkgs.sway}/bin/swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq '.[] | select(.focused).num')
+            ${pkgs.sway}/bin/swaymsg workspace number $(( n >= 10 ? 1 : n + 1 ))
+          ''}";
+          "${mod}+Left" = "exec ${pkgs.writeShellScript "ws-left" ''
+            n=$(${pkgs.sway}/bin/swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq '.[] | select(.focused).num')
+            ${pkgs.sway}/bin/swaymsg workspace number $(( n <= 1 ? 10 : n - 1 ))
+          ''}";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
