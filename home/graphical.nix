@@ -105,12 +105,11 @@ in
   };
 
   xdg.configFile."nwg-drawer/drawer.css".text = ''
-  window {
-    background-color: rgba(0, 0, 0, 0.85);
-    color: ${theme.colors.hash.fg};
-  }
+    window {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: ${theme.colors.hash.fg};
+    }
   '';
-
 
   home.packages = with pkgs; [
     nwg-drawer
