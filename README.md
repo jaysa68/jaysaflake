@@ -55,6 +55,7 @@ To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/ru
 [x] configure firefox
 [ ] add microphone toggle and status in status bar, next to mute
 [ ] home manager module for sc-controller. my keybinds are currently just set with the gui once!!
+[ ] configure rofi or fuzzel to function like nwg-drawer. currently i have to run it in the bg to avoid slow gtk app startup speed, which is not ideal for a launcher
 
 ## misc
 [ ] easy way to add songs to ipod shuffle
