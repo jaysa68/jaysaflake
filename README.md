@@ -54,6 +54,7 @@ To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/ru
 [x] screenshots
 [x] configure firefox
 [ ] add microphone toggle and status in status bar, next to mute
+[ ] home manager module for sc-controller. my keybinds are currently just set with the gui once!!
 
 ## misc
 [ ] easy way to add songs to ipod shuffle

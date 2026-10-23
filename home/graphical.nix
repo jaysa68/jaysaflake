@@ -104,7 +104,16 @@ in
     };
   };
 
+  xdg.configFile."nwg-drawer/drawer.css".text = ''
+  window {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: ${theme.colors.hash.fg};
+  }
+  '';
+
+
   home.packages = with pkgs; [
+    nwg-drawer
     gimp
     libreoffice
     pavucontrol
@@ -123,28 +132,28 @@ in
   ];
 
   programs = {
-    fuzzel = {
-      enable = true;
-      settings = {
-        main = {
-          font = "${theme.fonts.mono}:size=12";
-          terminal = "foot";
-        };
-        colors = {
-          background = theme.colors.rgba.bg;
-          text = theme.colors.rgba.fg;
-          prompt = theme.colors.rgba.muted;
-          match = theme.colors.rgba.accent;
-          selection = theme.colors.rgba.black;
-          selection-text = theme.colors.rgba.fg;
-          selection-match = theme.colors.rgba.accent;
-          border = theme.colors.rgba.muted;
-        };
-        border = {
-          width = 1;
-          radius = 0;
-        };
-      };
-    };
+    #fuzzel = {
+    #  enable = true;
+    #  settings = {
+    #    main = {
+    #      font = "${theme.fonts.mono}:size=12";
+    #      terminal = "foot";
+    #    };
+    #    colors = {
+    #      background = theme.colors.rgba.bg;
+    #      text = theme.colors.rgba.fg;
+    #      prompt = theme.colors.rgba.muted;
+    #      match = theme.colors.rgba.accent;
+    #      selection = theme.colors.rgba.black;
+    #      selection-text = theme.colors.rgba.fg;
+    #      selection-match = theme.colors.rgba.accent;
+    #      border = theme.colors.rgba.muted;
+    #    };
+    #    border = {
+    #      width = 1;
+    #      radius = 0;
+    #    };
+    #  };
+    #};
   };
 }

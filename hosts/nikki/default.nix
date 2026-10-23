@@ -31,22 +31,22 @@
     command = "sway";
   };
 
-environment.systemPackages = with pkgs; [
-  sc-controller # map steam deck buttons
-  wvkbd # on-screen keeb
-];
+  environment.systemPackages = with pkgs; [
+    sc-controller # map steam deck buttons
+    wvkbd # on-screen keeb
+  ];
 
-# sc-controller daemon for just nikki. dont want it on all machines
-systemd.user.services.scc-daemon = {
-  description = "SC Controller daemon";
-  wantedBy = [ "graphical-session.target" ];
-  partOf = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
-  serviceConfig = {
-    ExecStart = "${pkgs.sc-controller}/bin/scc-daemon start --foreground";
-    Restart = "on-failure";
+  # sc-controller daemon for just nikki. dont want it on all machines
+  systemd.user.services.scc-daemon = {
+    description = "SC Controller daemon";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.sc-controller}/bin/scc-daemon start --foreground";
+      Restart = "on-failure";
+    };
   };
-};
 
   networking.hostName = "nikki";
 }
