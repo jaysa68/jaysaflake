@@ -44,6 +44,7 @@ in
       startup = [
         # -L 300 makes it taller than the default
         { command = "wvkbd-mobintl --hidden -L 300"; }
+        { command = "nwg-drawer -r -term foot"; }
       ];
       colors = {
         focused = {
