@@ -32,6 +32,15 @@ in
           output = "LG Electronics LG ULTRAGEAR 601BNNW2T639";
         }
       ];
+      "sway/workspaces" = {
+        persistent-workspaces = {
+          "1" = [ ];
+          "2" = [ ];
+          "3" = [ ];
+          "4" = [ ];
+          "5" = [ ];
+        };
+      };
       modifier = "Mod4";
       window = {
         titlebar = false;
