@@ -42,7 +42,8 @@ in
       };
       bars = [ ]; # to disable swaybar cuz i use waybar
       startup = [
-        { command = "wvkbd-mobintl --hidden"; }
+        # -L 300 makes it taller than the default
+        { command = "wvkbd-mobintl --hidden -L 300"; }
       ];
       colors = {
         focused = {
