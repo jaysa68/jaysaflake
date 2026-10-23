@@ -9,6 +9,15 @@
       margin-left = 6;
       margin-right = 6;
       margin-bottom = 0;
+      "sway/workspaces" = {
+        persistent-workspaces = {
+          "1" = [ ];
+          "2" = [ ];
+          "3" = [ ];
+          "4" = [ ];
+          "5" = [ ];
+        };
+      };
       "group/workspaces-box" = {
         orientation = "horizontal";
         modules = [ "sway/workspaces" ];
