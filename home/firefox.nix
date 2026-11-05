@@ -60,12 +60,12 @@
           icon = "briefcase";
         };
         "3-mb2" = {
-          id = 2;
+          id = 3;
           color = "blue";
           icon = "briefcase";
         };
         "4-pp" = {
-          id = 2;
+          id = 4;
           color = "red";
           icon = "briefcase";
         };
