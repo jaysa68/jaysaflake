@@ -37,6 +37,7 @@ in
     which
 
     fastfetch
+    wf-recorder
 
     # for arini
     devenv

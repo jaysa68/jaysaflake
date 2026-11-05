@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   theme = import ./theme.nix;
@@ -17,58 +17,63 @@ in
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
-  programs.chromium.enable = true; # for playwright
-  programs.ncmpcpp = {
-    enable = true;
+  services.mpd = {
+    enable = true; # for ncmpcpp
+    musicDirectory = "${config.home.homeDirectory}/Music";
   };
-  programs.halloy = {
-    package = pkgs.symlinkJoin {
-      name = "aiko-halloy";
-      paths = [ pkgs.halloy ];
-      buildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram $out/bin/halloy --set WGPU_BACKEND gl
-      '';
-    }; # something something old hardware gpu compatibility
-    enable = true;
-    settings = {
-      preview = {
-        image = {
-          action = "preview";
-        };
-      };
-      font = {
-        family = theme.fonts.mono;
-        size = 14;
-      };
-      theme = "gruvbox";
-      servers = {
-        liberachat = {
-          nickname = "jaysa";
-          server = "irc.libera.chat";
-          channels = [
-            "#nixos"
-            "#halloy"
-          ];
-          sasl.plain = {
-            username = "jaysa";
-            password_file = "/home/jaysa/.secrets/liberachat";
+
+  programs = {
+    chromium.enable = true; # for playwright
+    ncmpcpp.enable = true;
+    halloy = {
+      package = pkgs.symlinkJoin {
+        name = "aiko-halloy";
+        paths = [ pkgs.halloy ];
+        buildInputs = [ pkgs.makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/halloy --set WGPU_BACKEND gl
+        '';
+      }; # something something old hardware gpu compatibility
+      enable = true;
+      settings = {
+        preview = {
+          image = {
+            action = "preview";
           };
         };
-        ocf = {
-          nickname = "jaysa";
-          server = "irc.ocf.berkeley.edu";
-          channels = [
-            "#rebuild"
-            "#off-topic"
-          ];
-          sasl.plain = {
-            username = "jaysa";
-            password_file = "/home/jaysa/.secrets/ocf-irc";
+        font = {
+          family = theme.fonts.mono;
+          size = 14;
+        };
+        theme = "gruvbox";
+        servers = {
+          liberachat = {
+            nickname = "jaysa";
+            server = "irc.libera.chat";
+            channels = [
+              "#nixos"
+              "#halloy"
+            ];
+            sasl.plain = {
+              username = "jaysa";
+              password_file = "/home/jaysa/.secrets/liberachat";
+            };
+          };
+          ocf = {
+            nickname = "jaysa";
+            server = "irc.ocf.berkeley.edu";
+            channels = [
+              "#rebuild"
+              "#off-topic"
+            ];
+            sasl.plain = {
+              username = "jaysa";
+              password_file = "/home/jaysa/.secrets/ocf-irc";
+            };
           };
         };
+        buffer.channel.topic.enabled = true;
       };
-      buffer.channel.topic.enabled = true;
     };
   };
 
