@@ -59,6 +59,16 @@
           color = "orange";
           icon = "briefcase";
         };
+        "3-mb2" = {
+          id = 2;
+          color = "blue";
+          icon = "briefcase";
+        };
+        "4-pp" = {
+          id = 2;
+          color = "red";
+          icon = "briefcase";
+        };
       };
       bookmarks = {
         force = true;
