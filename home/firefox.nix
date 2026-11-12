@@ -129,14 +129,24 @@
             url = "https://mail.zoho.com/zm/#mail/folder/inbox";
           }
           {
+            name = "Google Maps";
+            keyword = "maps";
+            url = "https://www.google.com/maps";
+          }
+          {
             name = "Gmail";
             keyword = "gm";
             url = "https://mail.google.com/mail/u/0/#inbox";
           }
           {
-            name = "Google Maps";
-            keyword = "maps";
-            url = "https://www.google.com/maps";
+            name = "Outlook"; # for arini
+            keyword = "ol";
+            url = "https://outlook.cloud.microsoft/mail";
+          }
+          {
+            name = "bill.com"; # for arini
+            keyword = "bill";
+            url = "https://app01.us.bill.com";
           }
           {
             name = "goblin";
@@ -259,6 +269,10 @@
             };
             "siteContainerMap@@_linear.app" = {
               userContextId = "2";
+              neverAsk = true;
+            };
+            "siteContainerMap@@_bill.com" = {
+              userContextId = "4";
               neverAsk = true;
             };
           };
