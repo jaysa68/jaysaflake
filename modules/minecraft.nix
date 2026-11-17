@@ -25,7 +25,7 @@ in
       jvmOpts = "-Xms8G -Xmx12G";
       symlinks = {
         mods = "${atm10a-mods}/mods";
-	datapacks = "${atm10a}/datapacks";
+        datapacks = "${atm10a}/datapacks";
       };
       files = {
         config = "${atm10a}/config";
