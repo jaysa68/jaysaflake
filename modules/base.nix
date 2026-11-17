@@ -5,6 +5,10 @@
     "nix-command"
     "flakes"
   ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel" # for remote deploy
+  ];
   boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
   networking.networkmanager.enable = true;
   programs = {
@@ -37,7 +41,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [ nixpkgs-review ];
     shell = pkgs.zsh;
   };
 

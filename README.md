@@ -2,6 +2,12 @@
 
 ![screenshot of setup](./screenshot.png)
 
+## Remote Deploy
+
+In the root dir, run:
+
+1. `nixos-rebuild switch --flake .#HOSTNAME --target-host jaysa@HOSTDOMAIN --sudo --ask-sudo-password`
+
 ## Adding New Hosts
 
 1. `git clone https://github.com/jaysa68/jaysaflake.git ~/jaysaflake`
@@ -49,6 +55,7 @@ To run a host as a VM: ```nixos-rebuild build-vm --flake .#venus ./result/bin/ru
         - WBE
         - aella
         - ppl from college
+[ ] colmena for deploy?
 
 ## home manager
 [x] screenshots

@@ -47,6 +47,7 @@ in
   ];
 
   programs = {
+    prismlauncher.enable = true;
     lazygit = {
       enable = true;
       enableZshIntegration = true;

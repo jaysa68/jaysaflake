@@ -11,6 +11,10 @@
     nixvim.url = "github:nix-community/nixvim";
     claude-code.url = "github:sadjow/claude-code-nix";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +25,7 @@
       nixvim,
       claude-code,
       jovian,
+      disko,
       ...
     }:
     let
@@ -32,6 +37,7 @@
           modules = [
             ./hosts/${host}
             jovian.nixosModules.default # steam deck presets
+            disko.nixosModules.disko
             {
               nixpkgs.overlays = [
                 nur.overlays.default
@@ -50,6 +56,6 @@
     in
     {
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
-      nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" "abia" "nikki" ] mkHost;
+      nixosConfigurations = nixpkgs.lib.genAttrs [ "aiko" "venus" "abia" "nikki" "tiffany" ] mkHost;
     };
 }

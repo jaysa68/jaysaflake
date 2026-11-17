@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,6 +6,23 @@
     ../../modules/graphical.nix
     ../../modules/base.nix
   ];
+
+  systemd.user.services.signal-cli-receive = {
+    description = "signal-cli receive";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.signal-cli}/bin/signal-cli receive --ignore-attachments";
+    };
+  };
+
+  systemd.user.timers.signal-cli-receive = {
+    description = "Run signal-cli receive periodically";
+    timerConfig = {
+      OnCalendar = "*-*-* 0/6:00:00";
+      Persistent = true;
+    };
+    wantedBy = [ "timers.target" ];
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
