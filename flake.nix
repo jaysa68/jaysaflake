@@ -11,6 +11,7 @@
     nixvim.url = "github:nix-community/nixvim";
     claude-code.url = "github:sadjow/claude-code-nix";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +26,7 @@
       nixvim,
       claude-code,
       jovian,
+      nix-minecraft,
       disko,
       ...
     }:
@@ -38,10 +40,12 @@
             ./hosts/${host}
             jovian.nixosModules.default # steam deck presets
             disko.nixosModules.disko
+            nix-minecraft.nixosModules.minecraft-servers
             {
               nixpkgs.overlays = [
                 nur.overlays.default
                 claude-code.overlays.default
+                nix-minecraft.overlay
               ];
             }
             home-manager.nixosModules.home-manager
