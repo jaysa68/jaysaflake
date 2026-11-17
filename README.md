@@ -8,6 +8,12 @@ In the root dir, run:
 
 1. `nixos-rebuild switch --flake .#HOSTNAME --target-host jaysa@HOSTDOMAIN --sudo --ask-sudo-password`
 
+## Minecraft (tiffany)
+
+View live logs: `sudo tail -f /srv/minecraft/turlockmc/logs/latest.log`
+
+Admin console: `sudo tmux -S /run/minecraft/turlockmc.sock attach`
+
 ## Adding New Hosts
 
 1. `git clone https://github.com/jaysa68/jaysaflake.git ~/jaysaflake`

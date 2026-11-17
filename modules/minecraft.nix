@@ -1,10 +1,16 @@
 { pkgs, lib, ... }:
 let
   atm10a = pkgs.fetchzip {
-    url = "https://mediafilez.forgecdn.net/files/9023/4/ATM10AERO-0.7.1-server.zip";
-    hash = "sha256-ef2nPHvGRXiHkd4+19c/46HcvETaq7TUuhJxLymbeLo";
+    url = "https://mediafilez.forgecdn.net/files/9366/712/ATM10AERO-0.8.0-server.zip";
+    hash = "sha256-jtben9CphEGiQsT+QkJo8yLA1m7qrBqb3L51bnolRvM=";
     stripRoot = false;
   };
+  # remove CrashAssistant; it's clientside and crashes the server
+  atm10a-mods = pkgs.runCommand "atm10a-mods" { } ''
+    mkdir -p $out/mods
+    ln -s ${atm10a}/mods/* $out/mods
+    rm $out/mods/CrashAssistant-*.jar
+  '';
 in
 {
   services.minecraft-servers = {
@@ -13,10 +19,12 @@ in
     openFirewall = true;
     servers.turlockmc = {
       enable = true;
-      package = pkgs.neoforgeServers.neoforge-1_21_1-21_1_250;
+      package = pkgs.neoforgeServers.neoforge-1_21_1-21_1_250.override {
+        jre_headless = pkgs.jdk21_headless;
+      };
       jvmOpts = "-Xms8G -Xmx12G";
       symlinks = {
-        mods = "${atm10a}/mods";
+        mods = "${atm10a-mods}/mods";
 	datapacks = "${atm10a}/datapacks";
       };
       files = {
