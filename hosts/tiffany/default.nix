@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ../../modules/base.nix
     ../../modules/minecraft.nix
+    ../../modules/wordpress.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
