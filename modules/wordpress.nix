@@ -3,6 +3,11 @@
   services.wordpress = {
     webserver = "caddy";
     sites."paula.jaysa.net" = {
+      database.name = "wordpress_paula";
+      settings.WP_DEFAULT_THEME = "twentytwentyfour";
+    };
+    sites."demona.jaysa.net" = {
+      database.name = "wordpress_demona";
       settings.WP_DEFAULT_THEME = "twentytwentyfour";
     };
   };

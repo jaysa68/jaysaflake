@@ -1,15 +1,21 @@
 { pkgs, lib, ... }:
 let
+  grieflogger = pkgs.fetchurl {
+    url = "https://cdn.modrinth.com/data/8oGVUFuX/versions/IrRNGJIR/grieflogger-1.2.10-1.21.1-neoforge.jar";
+    hash = "sha256-/SUrxUZruU440jhrr7mSa3mLwlCybho6qA+HjrzLxKU=";
+  };
   atm10a = pkgs.fetchzip {
     url = "https://mediafilez.forgecdn.net/files/9366/712/ATM10AERO-0.8.0-server.zip";
     hash = "sha256-jtben9CphEGiQsT+QkJo8yLA1m7qrBqb3L51bnolRvM=";
     stripRoot = false;
   };
-  # remove CrashAssistant; it's clientside and crashes the server
+  # we remove CrashAssistant; it's clientside and crashes the server (something about nix read-only files)
+  # and add grief logger
   atm10a-mods = pkgs.runCommand "atm10a-mods" { } ''
     mkdir -p $out/mods
     ln -s ${atm10a}/mods/* $out/mods
     rm $out/mods/CrashAssistant-*.jar
+    ln -s ${grieflogger} $out/mods/grieflogger-1.2.10-1.21.1-neoforge.jar
   '';
 in
 {
@@ -44,6 +50,8 @@ in
         PuffHunt = "b0ef1040-b9cf-4aed-8121-3a1aa49c4e3c";
         Sour_Surge = "c58094c3-3087-4606-a143-250f80a5bd6d";
         Demonaliza = "eaa1e2a3-e6f2-4371-a840-993367aaa213";
+        Erfinnder = "b130b0f9-2d76-4905-ab68-74a86b63d645";
+	EpicRon = "70d4caad-fb6a-487a-a4f9-6bbbcfba22f7";
       };
     };
   };

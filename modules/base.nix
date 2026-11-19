@@ -41,7 +41,10 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ nixpkgs-review ];
+    packages = with pkgs; [
+      nixpkgs-review
+      dns-utils
+    ];
     shell = pkgs.zsh;
   };
 
