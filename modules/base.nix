@@ -43,7 +43,7 @@
     ];
     packages = with pkgs; [
       nixpkgs-review
-      dns-utils
+      bind
     ];
     shell = pkgs.zsh;
   };

@@ -8,6 +8,7 @@
     ../../modules/base.nix
     ../../modules/minecraft.nix
     ../../modules/wordpress.nix
+    ../../modules/matrix.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
