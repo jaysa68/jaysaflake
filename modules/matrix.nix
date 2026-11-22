@@ -8,6 +8,18 @@
       public_baseurl = "https://chat.jaysa.net";
       enable_registration = true;
       registration_requires_token = true;
+      auto_join_rooms = [
+        "#bar-and-lounge:jaysa.net"
+        "#turlockmc:jaysa.net"
+      ];
+      autocreate_auto_join_rooms = true;
+      autocreate_auto_join_room_preset = "public_chat";
+      room_list_publication_rules = [
+        {
+          user_id = "@jaysa:jaysa.net";
+          action = "allow";
+        }
+      ];
     };
   };
   services.postgresql = {
