@@ -37,6 +37,18 @@
       }
     ];
   };
+  services.mautrix-discord = {
+  enable = true;
+  settings = {
+  homeserver = {
+      address = "http://127.0.0.1:8008";
+      domain = "jaysa.net";
+    };
+    bridge.permissions = {
+      "@jaysa:jaysa.net" = "admin";
+    };
+  };
+};
   services.caddy.virtualHosts."chat.jaysa.net".extraConfig = ''
       handle /_matrix/* {
       reverse_proxy 127.0.0.1:8008
