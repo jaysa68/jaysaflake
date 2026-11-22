@@ -74,6 +74,11 @@
         force = true;
         settings = [
           {
+            name = "chat.jaysa.net";
+            keyword = "chat";
+            url = "https://chat.jaysa.net";
+          }
+          {
             name = "Slack";
             keyword = "sl";
             url = "https://app.slack.com/client";
