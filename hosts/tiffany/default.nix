@@ -9,6 +9,7 @@
     ../../modules/minecraft.nix
     ../../modules/wordpress.nix
     ../../modules/matrix.nix
+    ../../modules/webhost.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

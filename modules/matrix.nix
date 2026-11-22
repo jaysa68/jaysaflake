@@ -6,10 +6,13 @@
     settings = {
       server_name = "jaysa.net";
       public_baseurl = "https://chat.jaysa.net";
+      enable_registration = true;
+      registration_requires_token = true;
     };
   };
   services.postgresql = {
     enable = true;
+    # needed for intiial server creation
     initialScript = pkgs.writeText "synapse-init.sql" ''
       CREATE ROLE "matrix-synapse" LOGIN;
       CREATE DATABASE "matrix-synapse" WITH OWNER "matrix-synapse"

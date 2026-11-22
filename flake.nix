@@ -16,10 +16,18 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jaysa-web = {
+      url = "github:jaysa68/jaysa.net-web";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    jaysa-blog = {
+      url = "github:jaysa68/jaysa.net-blog";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
       home-manager,
       nur,
@@ -36,6 +44,7 @@
       mkHost =
         host:
         nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/${host}
             jovian.nixosModules.default # steam deck presets
