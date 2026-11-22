@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.permittedInsecurePackages = [ "olm-3.2.16" ]; # https://matrix.org/blog/2024/08/libolm-deprecation/, but mautrix hasnt moved.
+
   services.matrix-synapse = {
     enable = true;
     settings = {
@@ -45,6 +47,7 @@
       domain = "jaysa.net";
     };
     bridge.permissions = {
+      "jaysa.net" = "user";
       "@jaysa:jaysa.net" = "admin";
     };
   };
