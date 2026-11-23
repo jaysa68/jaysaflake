@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792507013,
+        "narHash": "sha256-8tKjSQajD3mUND1GaAuaWTcuyUpgcGsh5V+l4ibzC7U=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "5e5b88a0c8e56f291a108c2fe9934054d9745b2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "type": "github"
+      }
+    },
     "claude-code": {
       "inputs": {
         "nixpkgs": "nixpkgs",
@@ -145,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795310457,
-        "narHash": "sha256-Zv4jHRDhEpGWWnHvCrSiz/JJ10OW9QTjS33lPzkBCDg=",
+        "lastModified": 1795414032,
+        "narHash": "sha256-sQkIH6c2mx6kbpOgYdBp6JGlgg6kqIoA12EltIDRm4I=",
         "owner": "jaysa68",
         "repo": "jaysa.net-web",
-        "rev": "72df61a6c74ba926ee58b1511d2b29441dce54e6",
+        "rev": "afd72c54b384d71c6782ec8750b39e17d16abbdb",
         "type": "github"
       },
       "original": {
@@ -340,11 +360,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1795402227,
-        "narHash": "sha256-B66gVVpaXySo+FcGs6r2vocDsMBSLUytBMeDVH7IaYs=",
+        "lastModified": 1795413379,
+        "narHash": "sha256-//jICUODKcQv5pVjaFdPrUdbrWjGg88iBXls+RXftzE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fc0bc050e461de432cc973992756575192ad69ad",
+        "rev": "06cfa249199d41964dd58f8e7d46a332e27b814e",
         "type": "github"
       },
       "original": {
@@ -355,6 +375,7 @@
     },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "claude-code": "claude-code",
         "disko": "disko",
         "home-manager": "home-manager",
