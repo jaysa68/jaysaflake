@@ -24,6 +24,10 @@
       url = "github:jaysa68/jaysa.net-blog";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -36,6 +40,7 @@
       jovian,
       nix-minecraft,
       disko,
+      agenix,
       ...
     }:
     let
@@ -49,6 +54,7 @@
             ./hosts/${host}
             jovian.nixosModules.default # steam deck presets
             disko.nixosModules.disko
+	    agenix.nixosModules.default
             nix-minecraft.nixosModules.minecraft-servers
             {
               nixpkgs.overlays = [

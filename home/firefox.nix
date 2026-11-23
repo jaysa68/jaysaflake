@@ -75,8 +75,13 @@
         settings = [
           {
             name = "chat.jaysa.net";
-            keyword = "chat";
+            keyword = "c";
             url = "https://chat.jaysa.net";
+          {
+            name = "rss.jaysa.net";
+            keyword = "r";
+            url = "https://rss.jaysa.net";
+          }
           }
           {
             name = "Slack";

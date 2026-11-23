@@ -10,6 +10,7 @@
     ../../modules/wordpress.nix
     ../../modules/matrix.nix
     ../../modules/webhost.nix
+    ../../modules/rss.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
