@@ -54,7 +54,7 @@
             ./hosts/${host}
             jovian.nixosModules.default # steam deck presets
             disko.nixosModules.disko
-	    agenix.nixosModules.default
+            agenix.nixosModules.default
             nix-minecraft.nixosModules.minecraft-servers
             {
               nixpkgs.overlays = [

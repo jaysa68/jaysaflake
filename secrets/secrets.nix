@@ -3,5 +3,8 @@ let
   tiffany = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOi3OXpGyQY8yLcjYHUlFse1w8MJk31aEdFCjBIFGyK6";
 in
 {
-  "miniflux-admin.age".publicKeys = [ jaysa tiffany ];
+  "miniflux-admin.age".publicKeys = [
+    jaysa
+    tiffany
+  ];
 }

@@ -128,6 +128,7 @@ in
     slurp
     wl-clipboard
 
+    element-desktop
     signal-desktop
     signal-cli
 

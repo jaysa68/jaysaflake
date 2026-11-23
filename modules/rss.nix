@@ -9,8 +9,7 @@
     config.BASE_URL = "https://rss.jaysa.net";
   };
 
-
-services.caddy.virtualHosts."rss.jaysa.net".extraConfig = ''
+  services.caddy.virtualHosts."rss.jaysa.net".extraConfig = ''
     reverse_proxy 127.0.0.1:8080
   '';
 }
