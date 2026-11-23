@@ -17,6 +17,17 @@ let
     rm $out/mods/CrashAssistant-*.jar
     ln -s ${grieflogger} $out/mods/grieflogger-1.2.10-1.21.1-neoforge.jar
   '';
+  #requested by daltostar on 11/22/2026 to make flight work
+  atm10a-config = pkgs.runCommand "atm10a-config" { } ''
+    cp -r ${atm10a}/config $out
+    chmod -R u+w $out
+    sed -i \
+      -e 's/"apothic_attributes:flying", //' \
+      -e 's/"ars_nouveau:flight", //' \
+      -e 's/"neovitae:flight", //' \
+      -e 's/"reliquary:flight", //' \
+      $out/pylons-server.toml
+  '';
 in
 {
   services.minecraft-servers = {
@@ -34,7 +45,7 @@ in
         datapacks = "${atm10a}/datapacks";
       };
       files = {
-        config = "${atm10a}/config";
+        config = atm10a-config;
         defaultconfigs = "${atm10a}/defaultconfigs";
         kubejs = "${atm10a}/kubejs";
       };
