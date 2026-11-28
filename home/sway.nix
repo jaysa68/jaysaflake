@@ -25,11 +25,11 @@ in
       workspaceOutputAssign = [
         {
           workspace = "1";
-          output = "LG Electronics LG ULTRAGEAR 0x00000505";
+          output = "LG Electronics LG ULTRAGEAR 0x00000505"; # arini monitor 1
         }
         {
           workspace = "2";
-          output = "LG Electronics LG ULTRAGEAR 601BNNW2T639";
+          output = "LG Electronics LG ULTRAGEAR 601BNNW2T639"; # arini monitor 2
         }
       ];
       modifier = "Mod4";
@@ -70,6 +70,7 @@ in
           "${mod}+q" = "exec foot"; # i like opening terminals with 1 hand
           "${mod}+g" = "exec firefox"; # saves me 1 keypress. just muscle memory now
           "${mod}+u" = "exec signal-desktop"; # saves me 1 keypress for fuzzel + s
+          "${mod}+m" = "exec element-desktop";
           "${mod}+c" = "kill"; # i like closing stuff with 1 hand
           "${mod}+d" = "exec nwg-drawer -term foot";
           "${mod}+z" = "exec halloy";

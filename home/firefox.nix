@@ -59,15 +59,20 @@
           color = "orange";
           icon = "briefcase";
         };
-        "3-mb2" = {
+        "3-ocf" = {
           id = 3;
           color = "blue";
-          icon = "briefcase";
+          icon = "chill";
         };
-        "4-pp" = {
+        "4-mb2" = {
           id = 4;
           color = "red";
-          icon = "briefcase";
+          icon = "dollar";
+        };
+        "5-pp" = {
+          id = 5;
+          color = "red";
+          icon = "dollar";
         };
       };
       bookmarks = {
@@ -77,7 +82,7 @@
             name = "chat.jaysa.net";
             keyword = "c";
             url = "https://chat.jaysa.net";
-	  }
+          }
           {
             name = "rss.jaysa.net";
             keyword = "r";
